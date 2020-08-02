@@ -1,38 +1,11 @@
-const readline = require('readline');
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-function diceRoller(){
-
-  let random_1_30 = []
-
-  for(let i = 1; i < 3; i++){
-    random_1_30.push(randomNumber(30))
+function diceRoller(rolls = 1){
+  if (rolls === 0){
+    return []
+  } else {
+    let arr = diceRoller(rolls - 1)
+    arr.push(randomNumber(20))
+    return arr
   }
-
-  let diceRollsResults = []
-
-  for(let i = 1; i <= 5; i++){
-    diceRollsResults.push(randomNumber(20))
-  }
-
-  if(random_1_30[0] <= 7 && (random_1_30[1] >= 24 && random_1_30[1] <=30)){
-    diceRollsResults.push(25)
-  }
-
-  console.log(`Your randomly generated set: ${diceRollsResults}`)
-
-  rl.question('Are you happy? ', (answer) => {
-    if (answer.toUpperCase() === 'YES'){
-      rl.close();
-      return (console.log(`Thank you for your valuable feedback: ${answer}`))
-    }else{
-      return (diceRoller())
-    }
-  });
 }
 
 function randomNumber(rangeEnd){
@@ -43,4 +16,4 @@ function randomNumber(rangeEnd){
   return output
 }
 
-diceRoller()
+console.log(diceRoller(7))

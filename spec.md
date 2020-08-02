@@ -34,3 +34,8 @@ Additional comments:
 
 Additional comments:
 - function connected with 6)
+
+8. Bonus iteration: refactor the code using recurrence.
+
+Additional comments:
+- new function with recurrence
