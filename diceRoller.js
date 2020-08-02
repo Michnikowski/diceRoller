@@ -1,3 +1,10 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 function diceRoller(){
 
   let random_1_30 = []
@@ -16,7 +23,16 @@ function diceRoller(){
     diceRollsResults.push(25)
   }
 
-  return console.log(diceRollsResults)
+  console.log(`Your randomly generated set: ${diceRollsResults}`)
+
+  rl.question('Are you happy? ', (answer) => {
+    if (answer.toUpperCase() === 'YES'){
+      rl.close();
+      return (console.log(`Thank you for your valuable feedback: ${answer}`))
+    }else{
+      return (diceRoller())
+    }
+  });
 }
 
 function randomNumber(rangeEnd){

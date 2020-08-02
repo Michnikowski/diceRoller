@@ -29,3 +29,8 @@ Additional comments:
 
 Additional comments:
 - roll 5 times
+
+7. In this iteration, running the `dice_roller.js` script should display the following: "Your randomly generated set: ${results}. Are you happy?" and the input prompt. Entering anything other than "YES" restarts the script.
+
+Additional comments:
+- function connected with 6)
