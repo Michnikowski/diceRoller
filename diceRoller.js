@@ -1,13 +1,9 @@
-function diceRoller(){
-  let diceRollsResults
+function diceRoller(additionRoll = false){
+  let diceRollsResults = []
 
-  do {
-    diceRollsResults = []
-    for(let i = 1; i <= 5; i++){
-      diceRollsResults.push(randomNumber(20))
-    }
+  for(let i = 1; i <= 5 + additionRoll; i++){
+    diceRollsResults.push(randomNumber(20))
   }
-  while (arrSum(diceRollsResults) < 55)
 
   return console.log(diceRollsResults)
 }
@@ -20,8 +16,4 @@ function randomNumber(rangeEnd){
   return output
 }
 
-function arrSum(arr){
-  return arr.reduce((a, b) => a + b, 0)
-}
-
-diceRoller()
+diceRoller(true)

@@ -3,6 +3,7 @@
 2. In this iteration, running the `dice_roller.js` should return 5 randomly generated numbers (five dice rolls).
 However, the script should obtain the set by initially generating 7 dice rolls and excluding the highest and the lowest ones! It is extremely important not to change the order of the numbers.
 
+Additional comments:
 - remove from set first (on the left in the array) minimum and maximum value
 
 3. The script should generate the sets until it meets the following criteria: 
@@ -12,3 +13,9 @@ However, the script should obtain the set by initially generating 7 dice rolls a
 Additional comments:
 - don't use rules from point 2
 - generate only 5 numbers
+
+4. In this iteration we would like to perform additional roll, which would be appended to the set as last. Again, this should not count for the `at least 55 rule`.
+
+Additional comments:
+- don't use rules from point 2, 3
+- generate only 5 or 6 numbers if first arg true provided
