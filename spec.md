@@ -23,3 +23,9 @@ Additional comments:
 5. Before performing the roll specified in the point 2) generate a random number from within 1 - 30 range (i.e., roll a k30):
    - if the result is contained within the 1-7 range (included), perform another k30 roll.
    - then if the result of additional roll is 1, write a logic which changes the behavior of throwing away the highest and the lowest numbers mentioned in the point 2) to: exclude two lowest numbers from the set.
+
+6. Use the results of k30 dice rolls, specified in the point 5) to do the following: 
+   - if the first roll is within the 1-7 range (included), and the second roll is within 24-30 (included), then the additional roll specified in the point 4) (aka "the sixth one") should always equal to 25.
+
+Additional comments:
+- roll 5 times

@@ -1,28 +1,19 @@
 function diceRoller(){
 
-  let random_1_30
+  let random_1_30 = []
 
-  do {
-    random_1_30 = randomNumber(30)
+  for(let i = 1; i < 3; i++){
+    random_1_30.push(randomNumber(30))
   }
-  while (random_1_30 > 1 && random_1_30 < 8)
 
   let diceRollsResults = []
 
-  for(let i = 1; i <= 7; i++){
+  for(let i = 1; i <= 5; i++){
     diceRollsResults.push(randomNumber(20))
   }
 
-  let minValue = Math.min(...diceRollsResults)
-  removeValueFromArray(diceRollsResults, minValue)
-
-  if (random_1_30 !== 1){
-    const maxValue = Math.max(...diceRollsResults)
-    removeValueFromArray(diceRollsResults, maxValue)
-
-  } else {
-    let minValue = Math.min(...diceRollsResults)
-    removeValueFromArray(diceRollsResults, minValue)
+  if(random_1_30[0] <= 7 && (random_1_30[1] >= 24 && random_1_30[1] <=30)){
+    diceRollsResults.push(25)
   }
 
   return console.log(diceRollsResults)
@@ -34,11 +25,6 @@ function randomNumber(rangeEnd){
     output = Math.round(Math.random() * rangeEnd)
   }
   return output
-}
-
-function removeValueFromArray(arr, value){
-  arr.splice(arr.indexOf(value), 1)
-  return arr
 }
 
 diceRoller()
