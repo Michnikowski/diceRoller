@@ -1,0 +1,1 @@
+1. Please write a script called `dice_roller.js`. When launched using shell (`node dice_roller.js`) it should display a randomly generated number from 1-20 range. Imagine this as rolling a twenty sided dice (k20).
