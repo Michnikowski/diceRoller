@@ -1,17 +1,13 @@
 function diceRoller(){
-  const diceRollsResults = []
+  let diceRollsResults
 
-  for(let i = 1; i <= 7; i++){
-    diceRollsResults.push(randomNumber(20))
+  do {
+    diceRollsResults = []
+    for(let i = 1; i <= 5; i++){
+      diceRollsResults.push(randomNumber(20))
+    }
   }
-
-  const minValue = Math.min(...diceRollsResults)
-  const maxValue = Math.max(...diceRollsResults)
-  const itemToRemove = [minValue, maxValue]
-
-  for(const element of itemToRemove) {
-    diceRollsResults.splice(diceRollsResults.indexOf(element), 1)
-  }
+  while (arrSum(diceRollsResults) < 55)
 
   return console.log(diceRollsResults)
 }
@@ -22,6 +18,10 @@ function randomNumber(rangeEnd){
     output = Math.round(Math.random() * rangeEnd)
   }
   return output
+}
+
+function arrSum(arr){
+  return arr.reduce((a, b) => a + b, 0)
 }
 
 diceRoller()
